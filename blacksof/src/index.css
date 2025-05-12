@@ -1,5 +1,62 @@
+/* index.css */
+
+/* Import Tailwind's base, components, and utilities */
 @import "tailwindcss";
 
-html {
-    scroll-snap-type: y mandatory;
+/* Define global design tokens using @theme */
+@theme {
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
+
+  --color-header-bg: #F9FBFF;
+  --color-first-part: #00000099;
+  --color-third-part: #0067B1;
+  --color-button: #5CD6FF;
+
+
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 22px;
+  --font-size-2xl: 24px;
+  --font-size-xxl: 28px;
+  --font-size-4xl: 48px;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --letter-spacing-default: 0rem
 }
+
+/* Apply global text color and default styles */
+@layer base {
+  body {
+    color: var(--color-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: var(--letter-spacing-default);
+    font-family:  'Manrope', sans-serif;
+    text-align: center;
+    align-items: center;
+  }
+  input {
+    background-color: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    outline: none;
+    padding: 0.5rem 0;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+  }
+
+  input::placeholder {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+  }
+}
+

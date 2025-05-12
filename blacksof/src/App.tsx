@@ -1,17 +1,20 @@
-import { Header } from "./components/Header";
-import { HeroSection } from "./components/HeroSection";
-import { MiddleSection } from "./components/MiddleSection";
-import { ContactForm } from "./components/ContactForm";
-// import { Footer } from "./components/Footer";
+import { Header } from "./pages/Header";
+import { HeroSection } from "./pages/HeroSection";
+import { MiddleSection } from "./pages/middleSection/MiddleSection";
+import { ContactForm } from "./pages/ContactForm";
+import { Footer } from "./pages/footer/Footer";
+// import { CorouselSection } from "./pages/CorouselSection";
+
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900">
+    <div >
     <Header />
     <HeroSection />
     <MiddleSection/>
+    {/* <CorouselSection/> */}
     <ContactForm/>
-    {/* <Footer/> */}
+    <Footer/>
   </div>
   );
 }
