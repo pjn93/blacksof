@@ -30,3 +30,7 @@ This is a minimal template to get React working with Vite, including Hot Module 
 3. Run the following commands in the project directory:
    dev: Start the development server with Vite:
    npm run dev
+
+
+### Deployment
+1. Render: https://blacksof-uzf9.onrender.com
