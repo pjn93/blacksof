@@ -5,7 +5,7 @@ import { footerLinks } from "./Footer.config";
 export const Footer = () => {
   return (
     <footer className="bg-white text-black px-4 py-30 md:px-20  relative">
-      <div className="max-w-7xl mx-auto space-y-10">
+      <div className="max-w-7xl mx-auto space-y-10 pl-20">
         {/* Logo */}
         <div>
           <img
