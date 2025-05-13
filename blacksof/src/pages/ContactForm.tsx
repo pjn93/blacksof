@@ -3,7 +3,8 @@ import { TextInput } from "../ui/Input/Input";
 
 export const ContactForm = () => {
   return (
-    <div className="bg-third-part h-screen px-4 md:px-80 flex flex-col md:flex-row justify-evenly md:gap-x-1 items-center">
+ <div className="bg-third-part min-h-screen px-4 sm:px-8 md:px-16 lg:px-32 xl:px-80 flex flex-col md:flex-row justify-evenly gap-y-12 md:gap-x-12 items-start py-10 pt-50">
+
       {/* Left Section - Contact Info */}
       <div className="md:w-1/2 w-full space-y-6 text-left">
         <h2 className="text-4xl font-semibold">Get in touch</h2>

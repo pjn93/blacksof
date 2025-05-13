@@ -4,9 +4,9 @@ import { footerLinks } from "./Footer.config";
 
 export const Footer = () => {
   return (
-    <footer className="bg-white text-black p-30 md:px-20 relative">
-      <div className="max-w-7xl mx-auto space-y-10 pl-15">
-        {/* Row 1 - Logo */}
+    <footer className="bg-white text-black px-4 py-30 md:px-20  relative">
+      <div className="max-w-7xl mx-auto space-y-10">
+        {/* Logo */}
         <div>
           <img
             src={Logo}
@@ -15,12 +15,12 @@ export const Footer = () => {
           />
         </div>
 
-        {/* Row 2 - Links */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-left pl-2 pt-5">
-        {footerLinks.map((section, idx) => (
+        {/* Links */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 text-left">
+          {footerLinks.map((section, idx) => (
             <div key={idx}>
               <h4 className="font-semibold mb-3">{section.title}</h4>
-              <ul className="space-y-4 text-sm font-medium">
+              <ul className="space-y-2 text-sm font-medium">
                 {section.links.map((link, i) => (
                   <li key={i}>{link}</li>
                 ))}
@@ -29,17 +29,21 @@ export const Footer = () => {
           ))}
         </div>
 
-        {/* Bottom Address */}
-        <div className="flex flex-row justify-between pl-2 pr-40">
-          <p className="text-sm">©2023. All Rights Reserved.</p>
-          <p>Supreme house: 110, 16th Road, Chembur, Mumbai – 400071.</p>
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between gap-y-4 items-start md:items-center text-sm">
+          <p>© 2023. All Rights Reserved.</p>
+          <p className="md:text-right pr-50">
+            Supreme House: 110, 16th Road, Chembur, Mumbai – 400071.
+          </p>
         </div>
       </div>
+
+      {/* Decorative Image */}
       <img
-    src={Group}
-    alt="Supreme Group Decoration"
-    className="absolute bottom-0 right-0 w-[150px] md:w-[350px]" // adjust width as needed
-  />
+        src={Group}
+        alt="Supreme Group Decoration"
+        className="absolute bottom-0 right-0 w-[150px] md:w-[300px]"
+      />
     </footer>
   );
 };

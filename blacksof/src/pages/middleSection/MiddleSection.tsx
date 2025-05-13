@@ -1,29 +1,26 @@
 import Car from "../../assets/carbody.mp4";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel } from "swiper/modules";
 import TruckBody from "../../assets/commercial.mp4";
 import CabinLogo from "../../assets/cabinLogo.svg";
-import { Scrollbar } from "swiper/modules";
+import { vehicleOptions } from "./MiddleSection.config";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel, Scrollbar } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import { useState } from "react";
-import { vehicleOptions } from "./MiddleSection.config";
 
 export const MiddleSection = () => {
   const [selectedVideo, setSelectedVideo] = useState(Car);
-  
 
   return (
-    <div className="h-screen flex flex-col bg-secondary justify-center pt-30 overflow-hidden">
-      <p className="text-4xl font-light mb-8">
+    <div className="min-h-screen flex flex-col bg-secondary justify-center px-4 py-10 overflow-hidden">
+      {/* Heading */}
+      <p className="text-2xl sm:text-3xl md:text-4xl font-light mb-8 text-center leading-relaxed">
         Evolving the drive with <strong>360-degree</strong>
-        <br /> nonwoven solutions
+        <br className="hidden sm:block" /> nonwoven solutions
       </p>
 
-      <div
-        className="flex-grow w-full max-w-full mx-auto h-[540px]"
-        style={{ marginTop: -150 }}
-      >
+      {/* Swiper Section */}
+      <div className="w-full max-w-7xl mx-auto h-[520px] md:h-[580px] relative">
         <Swiper
           direction="vertical"
           mousewheel={{ forceToAxis: true, releaseOnEdges: true }}
@@ -36,26 +33,30 @@ export const MiddleSection = () => {
           slidesPerView={1}
           className="h-full w-full"
         >
+          {/* Passenger Vehicle Slide */}
           <SwiperSlide>
-            <div className="flex flex-col md:flex-row items-center justify-evenly w-full h-full ml-20">
-              <span className="text-left space-y-4">
-                <p className="text-3xl font-bold">Passenger vehicles</p>
-                <p className="text-lg font-normal">
+          <div className="flex flex-col md:flex-row items-center justify-evenly gap-8 w-full h-full">
+              {/* Text */}
+              <div className="md:w-2/5 px-2 text-center md:text-left space-y-4">
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold">Passenger vehicles</p>
+                <p className="text-base sm:text-lg font-normal">
                   Revving up Nonwoven innovation from <br />
                   interior to exterior.
                 </p>
-              </span>
+              </div>
 
-              <div className="md:w-1/2 flex flex-col justify-center">
+              {/* Video + Options */}
+              <div className="md:w-3/5 flex flex-col items-center justify-center gap-6 px-2">
                 <video
                   src={selectedVideo}
                   autoPlay
                   loop
                   muted
-                  className="w-full h-auto rotating-video"
+                  className="w-full h-auto rounded-lg"
                 />
 
-                <div className="flex flex-row justify-center gap-10 flex-wrap">
+                {/* Options */}
+                <div className="flex flex-wrap justify-center gap-6">
                   {vehicleOptions.map((opt) => (
                     <div
                       key={opt.label}
@@ -65,10 +66,11 @@ export const MiddleSection = () => {
                       <img
                         src={CabinLogo}
                         alt={opt.label}
-                        width="69"
-                        height="69"
+                        width="60"
+                        height="60"
+                        className="mb-1"
                       />
-                      <p>{opt.label}</p>
+                      <p className="text-sm">{opt.label}</p>
                     </div>
                   ))}
                 </div>
@@ -76,27 +78,30 @@ export const MiddleSection = () => {
             </div>
           </SwiperSlide>
 
+          {/* Commercial Vehicle Slide */}
           <SwiperSlide>
-            <div className="flex flex-col md:flex-row items-center justify-evenly w-full h-full ml-20">
-              <span className="text-left space-y-4">
-                <p className="text-3xl font-bold">Commercial vehicles</p>
-                <p className="text-lg font-normal">
+            <div className="flex flex-col md:flex-row items-center justify-evenly gap-8 w-full h-full">
+              <div className="text-center md:text-left space-y-4 md:w-1/2 px-2">
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold">Commercial vehicles</p>
+                <p className="text-base sm:text-lg font-normal">
                   Driving durability with cutting-edge <br />
                   nonwoven tech.
                 </p>
-              </span>
+              </div>
 
-              <div className="md:w-1/2 flex justify-center">
+              <div className="md:w-1/2 px-2">
                 <video
                   src={TruckBody}
                   autoPlay
                   loop
                   muted
-                  className="w-full h-auto rotating-video"
+                  className="w-full h-auto rounded-lg"
                 />
               </div>
             </div>
           </SwiperSlide>
+
+          {/* Custom Scrollbar */}
           <div className="custom-scrollbar w-1/2 h-2 bg-gray-300 mt-4 rounded-full mx-auto"></div>
         </Swiper>
       </div>
